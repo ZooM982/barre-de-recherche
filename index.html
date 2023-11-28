@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="App.css">
+    <script src="App.js"></script>
+    <title>Liste des animaux</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </div>
+                <div class="saisie mx-auto">
+                    <input placeholder="Rechercher dans le tableau" type="text" onkeyup="filtrer()" id="maRecherche">
+                    <div class="icons">
+                        <i class="fa-solid fa-magnifying-glass" style="margin: 10px; color: aliceblue; font-size: 25px;"></i>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        <div class="container">
+            <h1>Les Animaux</h1>
+            <div class="tete d-flex">
+                <h5>Les Animaux <span>(Animalia) (du latin animalis « animé, vivant, animal »)</span> sont en biologie, selon 
+                    la classification classique, des êtres vivants hétérotrophes <span>(c’est-à-dire qui se nourrissent 
+                        de substances organiques)</span> et possédant du collagène dans leurs matrices extracellulaires. 
+                    On réserve aujourd'hui le terme « animal » à des êtres complexes et multicellulaires, bien qu’on 
+                    ait longtemps considéré les protozoaires comme des animaux unicellulaires. Comme les autres êtres 
+                    vivants, tout animal a des semblables avec qui il forme un groupe <span>homogène</span>, appelé espèce.
+                </h5>
+                <!-- <p class="col-md-5">
+                    Dans les classifications scientifiques modernes, le taxon des animaux se nomme Animalia 
+                    <span>(création originale de Linné en 1758)</span>, eu égard au Code international de nomenclature zoologique 
+                    <span>(CINZ)</span> ou encore Metazoa <span>(synonyme junior créé par Haeckel en 1874)</span>. Quel que soit le terme employé 
+                    ou quelle que soit la classification retenue <span>(évolutionniste ou cladiste)</span>, les animaux sont 
+                    consensuellement décrits comme des organismes eucaryotes pluricellulaires, généralement mobiles 
+                    et hétérotrophes.
+    
+                    Dans le langage courant, les termes <span>« animal »</span> ou <span>« bête »</span> sont souvent utilisés pour distinguer le 
+                    reste du monde animal de l'espèce humaine. Le langage courant diffère également du biologique par le 
+                    fait que « animal » renvoie souvent à une certaine taille qui exclut entre autres les insectes 
+                    <a href="https://fr.wikipedia.org/wiki/Aide:R%C3%A9f%C3%A9rence_n%C3%A9cessaire">[réf. 
+                        nécessaire]</a>. L'éthique concernant les insectes et leur droit à la vie est sujet à débat et envisagé 
+                    différemment dans différentes cultures. Enfin, il peut être utilisé en opposition à « végétal », 
+                    terme qui regroupe les plantes et les algues, voire dans le langage courant les champignons2.
+    
+                    <span>La science consacrée à l'étude du règne animal est la zoologie</span>.
+                </p> -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <hr>
+        <section class="animaux-1" id="animaux-1">
+            <div class="container py-5 mx-auto">
+                <caption>
+                    <h5 class="my-3">Liste de noms d'animaux désignant le mâle, à la fois le mâle ou la femelle, et le petit</h5>
+                    <!-- <div class="saisie">
+                        <input placeholder="Rechercher dans le tableau" type="text" onkeyup="filtrer()" id="maRecherche">
+                        <div class="icons">
+                            <i class="fa-solid fa-magnifying-glass" style="margin: 10px; color: aliceblue; font-size: 25px;"></i>
+                        </div>
+                    </div> -->
+                    <p>92 lignes dans ce tableau</p>
+                </caption>
+                <div>
+                    <table>
+                        <thead> 		
+                            <tr> 			
+                                <th><strong>Mâle</strong></th> 			
+                                <th><strong>Femelle</strong></th> 			
+                                <th><strong>Petit</strong></th> 		
+                            </tr> 	
+                        </thead> 	
+                        <tbody> 
+                            <tr data-contenu="ABEILLE (MALE), FAUX BOURDON 			REINE (MERE), OUVRIERE 			LARVE, NYMPHE"> 			
+                                <td><p> Abeille (mâle), faux bourdon  </p> <div class="image"> <img id="img" src="images/abeille-male.jpg" onclick="openImg()" alt=""></div></td> 			
+                                <td><p> Reine (mère), ouvrière </p> <div class="image"> <img id="img" src="images/abeille-reine.jpg" onclick="openImg()" alt=""></div></td> 			
+                                <td><p> Larve, nymphe </p> <div class="image"> <img id="img" src="images/abeille-larve.jpg" onclick="openImg()" alt=""></div></td> 		
+                            </tr>
+                            <tr data-contenu="AIGLE (N. M. ET F.) 			AIGLON, AIGLONNE"> 			
+                                <td><p> Aigle (n. m. et f.) </p> <div class="image"><img src="images/aigle.jpg" onclick="openImg()" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td><p> Aiglon, aiglonne </p> <div class="image"><img src="images/aiglon.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="ANE 			ANESSE 			ANON"> 			
+                                <td><p> Âne </p> <div class="image"><img src="images/ane.jpg" alt=""></div> </td> 			
+                                <td><p> Ânesse </p> <div class="image"><img src="images/anesse.jpeg" alt=""></div> </td> 			
+                                <td><p> Ânon </p> <div class="image"><img src="images/anon.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            		
+                            <tr data-contenu="ALOUETTE (N. F.)"> 			
+                                <td><p> Alouette (n. f.) </p> <div class="image"><img src="images/alouette.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="BALEINE (N. F.) 			BALEINEAU"> 			
+                                <td><p> Baleine (n. f.) </p> <div class="image"><img src="images/baleine.avif" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td><p> Baleineau </p> <div class="image"><img src="images/baleineau.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="BELETTE (N. F.)"> 			
+                                <td><p> Belette (n. f.) </p> <div class="image"><img src="images/belette.jpeg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td>&nbsp;</td> 		
+                            </tr>
+                            <tr data-contenu="BISON 			BISONNE (RARE) 			BISONNEAU"> 			
+                                <td><p> Bison </p> <div class="image"><img src="images/bison.jpg" alt=""></div> </td> 			
+                                <td><p> Bisonne (rare) </p> <div class="image"><img src="images/bisone.jpg" alt=""></div> </td> 			
+                                <td><p> Bisonneau </p> <div class="image"><img src="images/bisonneau.jpeg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="BOUC 			CHEVRE 			CHEVREAU, CABRI"> 			
+                                <td><p> Bouc </p> <div class="image"><img src="images/bouc.jpg" alt=""></div> </td> 			
+                                <td><p> Chèvre </p> <div class="image"><img src="images/chevre.jpeg" alt=""></div> </td> 			
+                                <td><p> Chevreau, cabri </p> <div class="image"><img src="images/chevreau.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="BOEUF, TAUREAU 			VACHE 			VEAU, GENISSE"> 			
+                                <td><p> Bœuf, taureau </p> <div class="image"><img src="images/boeuf.jpg" alt=""></div> </td> 			
+                                <td><p> Vache </p> <div class="image"><img src="images/vache.jpg" alt=""></div> </td> 			
+                                <td><p> Veau, génisse </p> <div class="image"><img src="images/veau.jpeg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="BUFFLE 			BUFFLONNE, BUFFLESSE 			BUFFLON, BUFFLETIN"> 			
+                                <td><p> Buffle </p> <div class="image"><img src="images/buffle.jpg" alt=""></div> </td> 			
+                                <td><p> Bufflonne, bufflesse </p> <div class="image"><img src="images/bufflone.jpg" alt=""></div> </td> 			
+                                <td><p> Bufflon, buffletin </p> <div class="image"><img src="images/bufflon.jpg" alt=""></div> </td> 		
+                            </tr> 	
+                            <tr data-contenu="CARPE (N. F.) 			CARPEAU"> 			
+                                <td><p> Carpe (n. f.) </p> <div class="image"><img src="images/carpe.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td><p> Carpeau </p> <div class="image"><img src="images/carpeau.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CANARD 			CANE 			CANETON, CANETEAU"> 			
+                                <td><p> Canard </p> <div class="image"><img src="images/canard.jpg" alt=""></div> </td> 			
+                                <td><p> Cane </p> <div class="image"><img src="images/cane.webp" alt=""></div> </td> 			
+                                <td><p> Caneton, caneteau </p> <div class="image"><img src="images/caneton.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CERF 			BICHE 			FAON"> 			
+                                <td><p> Cerf </p> <div class="image"><img src="images/cerf.jpeg" alt=""></div> </td> 			
+                                <td><p> Biche </p> <div class="image"><img src="images/biche.webp" alt=""></div> </td> 			
+                                <td><p> Faon </p> <div class="image"><img src="images/faon.jpg" alt=""></div> </td>
+                            </tr>		
+                            		
+                            <tr data-contenu="CASTOR (N. M.)"> 			
+                                <td><p> Castor (n. m.) </p> <div class="image"><img src="images/castor.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td> 	
+                            </tr> 		
+                            <tr data-contenu="CHACAL (N. M.)"> 	
+                                <td><p> Chacal (n. m.) </p> <div class="image"><img src="images/chacal.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="CHAUVE-SOURIS (N. F.)"> 			
+                                <td><p> Chauve-souris (n. f.) </p> <div class="image"><img src="images/chauve-souris.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="CHIMPANZE (N. M.)"> 			
+                                <td><p> Chimpanzé (n. m.) </p> <div class="image"><img src="images/chimpanzé.jpg" alt=""></div> </td> 			
+                                <td>&nbsp; </td> 
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="CHOUETTE (N. F.)"> 			
+                                <td><p> Chouette (n. f.) </p> <div class="image"><img src="images/chouette.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td>&nbsp;</td> 		
+                            </tr> 
+                            </tr> 		<tr data-contenu="CHAMEAU 			CHAMELLE 			CHAMELON"> 			
+                                <td><p> Chameau </p> <div class="image"><img src="images/chameau.jpg" alt=""></div> </td> 			
+                                <td><p> Chamelle </p> <div class="image"><img src="images/chamelle.jpg" alt=""></div> </td> 			
+                                <td><p> Chamelon </p> <div class="image"><img src="images/chamelon.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CHAT, MATOU 			CHATTE 			CHATON"> 			
+                                <td><p> Chat, matou </p> <div class="image"><img src="images/chat.jpeg" alt=""></div> </td> 			
+                                <td><p> Chatte </p> <div class="image"><img src="images/chatte.jpg" alt=""></div> </td> 			
+                                <td><p> Chaton </p> <div class="image"><img src="images/chaton.webp" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CHEVAL, ETALON 			JUMENT 			POULAIN, POULICHE"> 			
+                                <td><p> Cheval, étalon </p> <div class="image"><img src="images/cheval.jpg" alt=""></div> </td> 			
+                                <td><p> Jument </p> <div class="image"><img src="images/jument.jpeg" alt=""></div> </td> 			
+                                <td><p> Poulain, pouliche </p> <div class="image"><img src="images/poulain.jpeg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CHEVREUIL 			CHEVRETTE 			FAON, CHEVROTIN"> 			
+                                <td><p> Chevreuil </p> <div class="image"></div> </td> 			
+                                <td><p> Chevrette </p> <div class="image"></div> </td> 			
+                                <td><p> Faon, chevrotin </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CHIEN 			CHIENNE 			CHIOT"> 			
+                                <td><p> Chien </p> <div class="image"></div> </td> 			
+                                <td><p> Chienne </p> <div class="image"></div> </td> 			
+                                <td><p> Chiot </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="COCHON, PORC, VERRAT 			TRUIE 			GORET, NOURRAIN, PORCELET, COCHONNET"> 			
+                                <td><p> Cochon, porc, verrat </p> <div class="image"></div> </td> 			
+                                <td><p> Truie </p> <div class="image"></div> </td> 			
+                                <td><p> Goret, nourrain, porcelet, cochonnet </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="COQ 			POULE 			POUSSIN"> 			
+                                <td><p> Coq </p> <div class="image"></div> </td> 			
+                                <td><p> Poule </p> <div class="image"></div> </td> 			
+                                <td><p> Poussin </p> <div class="image"></div> </td> 		
+                            </tr>		
+                            <tr data-contenu="CIGALE (N. F.)"> 			
+                                <td><p> Cigale (n. f.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="CIGOGNE (N. F.) 			CIGOGNEAU"> 			
+                                <td><p> Cigogne (n. f.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td> 			
+                                <td><p> Cigogneau  </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="CORBEAU (N. M.) 			CORBILLAT (RARE)"> 			
+                                <td><p> Corbeau (n. m.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Corbillat (rare)  </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="COYOTE (N. M.)"> 			
+                                    <td><p> Coyote (n. m.)  </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="CROCODILE (N. M.)"> 			
+                                    <td><p> Crocodile (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td> 
+                                    <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="DAUPHIN (N. M.)"> 			
+                                    <td><p> Dauphin (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="DROMADAIRE (N. M.)"> 			
+                                    <td><p> Dromadaire (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 
+                             		
+                            <tr data-contenu="DAIM 			DAINE (RARE) 			FAON"> 			
+                                <td><p> Daim </p> <div class="image"></div> </td> 			
+                                <td><p> Daine (rare) </p> <div class="image"></div> </td> 			
+                                <td><p> Faon </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="DINDON 			DINDE 			DINDONNEAU"> 			
+                                <td><p> Dindon </p> <div class="image"></div> </td> 			
+                                <td><p> Dinde </p> <div class="image"></div> </td> 			
+                                <td><p> Dindonneau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="ECUREUIL (N. M.)"> 			
+                                    <td><p> Écureuil (n. m.) </p> <div class="image"></div> </td> 
+                                    <td>&nbsp;</td> 			
+                                    <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="ELEPHANT 			ELEPHANTE (RARE) 			ELEPHANTEAU"> 			
+                                <td><p> Éléphant </p> <div class="image"></div> </td> 			
+                                <td><p> Éléphante (rare) </p> <div class="image"></div> </td> 			
+                                <td><p> Éléphanteau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="FAISAN 			FAISANE 			FAISANDEAU"> 			
+                                <td><p> Faisan </p> <div class="image"></div> </td> 			
+                                <td><p> Faisane </p> <div class="image"></div> </td> 			
+                                <td><p> Faisandeau </p> <div class="image"></div> </td> 		
+                            </tr>		
+                            <tr data-contenu="GAZELLE (N. F.)"> 			
+                                    <td><p> Gazelle (n. f.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="GEAI (N. M.)"> 			
+                                    <td><p> Geai (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="GIRAFE (N. F.) 			GIRAFEAU, GIRAFON"> 			
+                                    <td><p> Girafe (n. f.) </p> <div class="image"></div> </td>
+                                    <td>&nbsp;</td>  			
+                                    <td><p> Girafeau, girafon </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="GORILLE (N. M.)"> 			
+                                    <td><p> Gorille (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td> 
+                                    <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="GRENOUILLE (N. F.) 			TETARD"> 			
+                                    <td><p> Grenouille (n. f.) </p> <div class="image"></div> </td>
+                                    <td>&nbsp;</td>  			
+                                    <td><p> Têtard </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="GUEPARD (N. M.)"> 			
+                                    <td><p> Guépard (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="GUEPE (N. F.)"> 			
+                                    <td><p> Guêpe (n. f.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="HAMSTER (N. M.)"> 			
+                                    <td><p> Hamster (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="HIBOU (N. M.)"> 			
+                                    <td><p> Hibou (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="HIPPOPOTAME (N. M.)"> 			
+                                    <td><p> Hippopotame (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="HIRONDELLE (N. F.) 			HIRONDEAU"> 			
+                                    <td><p> Hirondelle (n. f.) </p> <div class="image"></div> </td> 
+                                    <td>&nbsp;</td> 			
+                                    <td><p> Hirondeau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="HYENE (N. F.)"> 			
+                                    <td><p> Hyène (n. f.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr>
+                            <tr data-contenu="HERISSON 			HERISSONNE (RARE)"> 			
+                                <td><p> Hérisson </p> <div class="image"></div> </td> 			
+                                <td><p> Hérissonne (rare) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="JARS 			OIE 			OISON"> 			
+                                <td><p> Jars </p> <div class="image"></div> </td> 			
+                                <td><p> Oie </p> <div class="image"></div> </td> 			
+                                <td><p> Oison </p> <div class="image"></div> </td> 		
+                            </tr>		
+                            <tr data-contenu="JAGUAR (N. M.)"> 			
+                                    <td><p> Jaguar (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="KANGOUROU (N. M.)"> 			
+                                    <td><p> Kangourou (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td> 
+                                    <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="KOALA (N. M.)"> 			
+                                    <td><p> Koala (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="LAMA (N. M.)"> 			
+                                    <td><p> Lama (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="LEOPARD (N. M.)"> 			
+                                    <td><p> Léopard (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="LOUTRE (N. F.)"> 			
+                                    <td><p> Loutre (n. f.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="LYNX (N. M.)"> 			
+                                    <td><p> Lynx (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td> 
+                            </tr>
+                            <tr data-contenu="LAPIN 			LAPINE 			LAPEREAU"> 			
+                                <td><p> Lapin </p> <div class="image"></div> </td> 			
+                                <td><p> Lapine </p> <div class="image"></div> </td> 			
+                                <td><p> Lapereau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="LIEVRE 			HASE 			LEVRAUT (OU LEVREAU)"> 			
+                                <td><p> Lièvre </p> <div class="image"></div> </td> 			
+                                <td><p> Hase </p> <div class="image"></div> </td> 			
+                                <td><p> Levraut (ou levreau) </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="LION 			LIONNE 			LIONCEAU"> 			
+                                <td><p> Lion </p> <div class="image"></div> </td> 			
+                                <td><p> Lionne </p> <div class="image"></div> </td> 			
+                                <td><p> Lionceau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="LOUP 			LOUVE 			LOUVETEAU"> 			
+                                <td><p> Loup </p> <div class="image"></div> </td> 			
+                                <td><p> Louve </p> <div class="image"></div> </td> 			
+                                <td><p> Louveteau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="MERLE 			MERLETTE (RARE) 			MERLEAU"> 			
+                                <td><p> Merle </p> <div class="image"></div> </td> 			
+                                <td><p> Merlette (rare) </p> <div class="image"></div> </td> 			
+                                <td><p> Merleau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="MOUTON, BELIER 			BREBIS 			AGNEAU, AGNELLE, AGNELET"> 			
+                                <td><p> Mouton, bélier </p> <div class="image"></div> </td> 			
+                                <td><p> Brebis </p> <div class="image"></div> </td> 			
+                                <td><p> Agneau, agnelle, agnelet </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="MARMOTTE (N. F.)"> 			
+                                    <td><p> Marmotte (n. f.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="MOINEAU (N. M.)"> 			
+                                    <td><p> Moineau (n. m.) </p> <div class="image"></div> </td> 			
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>  		
+                            </tr>
+                            				
+                            <tr data-contenu="ORIGNAL, ELAN 			ORIGNALE (RARE)"> 			
+                                <td><p> Orignal, élan </p> <div class="image"></div> </td> 			
+                                <td><p> Orignale (rare) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="OURS 			OURSE 			OURSON"> 			
+                                <td><p> Ours </p> <div class="image"></div> </td> 			
+                                <td><p> Ourse </p> <div class="image"></div> </td> 			
+                                <td><p> Ourson </p> <div class="image"></div> </td> 		
+                            </tr> 		<tr data-contenu="PAON 			PAONNE 			PAONNEAU"> 			
+                                <td><p> Paon </p> <div class="image"></div> </td> 			
+                                <td><p> Paonne </p> <div class="image"></div> </td> 			
+                                <td><p> Paonneau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="PIGEON 			PIGEONNE (RARE) 			PIGEONNEAU"> 			
+                                <td><p> Pigeon </p> <div class="image"></div> </td> 			
+                                <td><p> Pigeonne (rare) </p> <div class="image"></div> </td> 			
+                                <td><p> Pigeonneau </p> <div class="image"></div> </td> 		
+                            </tr>
+                            		
+                            <tr data-contenu="PANDA (N. M.)"> 			
+                                <td><p> Panda (n. m.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="PERDRIX (N. F.) 			PERDREAU"> 			
+                                <td><p> Perdrix (n. f.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Perdreau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="PERROQUET (N. M.)"> 			
+                                <td><p> Perroquet (n. m.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="PERRUCHE (N. F.)"> 			
+                                <td><p> Perruche (n. f.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="PHOQUE (N. M.) 			BEBE PHOQUE, BLANCHON, PHOQUETEAU (RARE)"> 			
+                                <td><p> Phoque (n. m.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Bébé phoque, blanchon, phoqueteau (rare) </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="PIE (N. F.)"> 			
+                                <td><p> Pie (n. f.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td>&nbsp;</td> 	
+                            </tr> 		
+                            <tr data-contenu="PINTADE (N. F.) 			PINTADEAU">
+                                <td><p> Pintade (n. f.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Pintadeau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="PORC-EPIC (N. M.)"> 			
+                                <td><p> Porc-épic (n. m.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr>  		
+                            <tr data-contenu="RAT 			RATE 			RATON"> 			
+                                <td><p> Rat </p> <div class="image"></div> </td> 			
+                                <td><p> Rate </p> <div class="image"></div> </td> 			
+                                <td><p> Raton </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="RENARD 			RENARDE 			RENARDEAU"> 			
+                                <td><p> Renard </p> <div class="image"></div> </td> 			
+                                <td><p> Renarde </p> <div class="image"></div> </td> 			
+                                <td><p> Renardeau </p> <div class="image"></div> </td> 		
+                            </tr>
+                            	
+                            <tr data-contenu="RHINOCEROS (N. M.)"> 			
+                                <td><p> Rhinocéros (n. m.) </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="ROSSIGNOL (N. M.) 			ROSSIGNOLET"> 			
+                                <td><p> Rossignol (n. m.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Rossignolet </p> <div class="image"></div> </td> 		
+                            </tr>	
+                            <tr data-contenu="SANGLIER 			LAIE 			MARCASSIN"> 			
+                                <td><p> Sanglier </p> <div class="image"></div> </td> 			
+                                <td><p> Laie </p> <div class="image"></div> </td> 			
+                                <td><p> Marcassin </p> <div class="image"></div> </td> 		
+                            </tr> 		<tr data-contenu="SINGE 			GUENON"> 			
+                                <td><p> Singe </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Guenon </p> <div class="image"></div> </td> 			
+                                <td>&nbsp;</td> 		
+                            </tr> 		 		
+                            <tr data-contenu="SERPENT (N. M.) 			SERPENTEAU"> 			
+                                <td><p> Serpent (n. m.) </p> <div class="image"></div> </td>
+                                <td>&nbsp;</td>  			
+                                <td><p> Serpenteau </p> <div class="image"></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="SOURIS (N. F.) 			SOURICEAU"> 			
+                                <td><p> Souris (n. f.) </p> <div class="image"><img src="images/souris.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td><p> Souriceau </p> <div class="image"><img src="images/souriceau.jpg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="TAON (N. M.)"> 			
+                                <td><p> Taon (n. m.) </p> <div class="image"><img src="images/taon.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td>&nbsp;</td> 		
+                            </tr> 
+                            <tr data-contenu="TIGRE 			TIGRESSE"> 			
+                                <td><p> Tigre </p> <div class="image"><img src="images/tigre.webp" alt=""></div> </td> 			
+                                <td><p> Tigresse </p> <div class="image"><img src="images/tigresse.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 		
+                            </tr>		
+                            <tr data-contenu="TAUPE (N. F.)"> 			
+                                <td><p> Taupe (n. f.) </p> <div class="image"><img src="images/taupe.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td> 		
+                            </tr> 		
+                            <tr data-contenu="TOURTERELLE (N. F.) 			TOURTEREAU"> 			
+                                <td><p> Tourterelle (n. f.) </p> <div class="image"><img src="images/tourterelle.jpeg" alt=""></div> </td> 			
+                                <td>&nbsp;</td> 
+                                <td><p> Tourtereau </p> <div class="image"><img src="images/tourtereau.jpeg" alt=""></div> </td> 		
+                            </tr> 		
+                            <tr data-contenu="VISON (N. M.)"> 			
+                                <td><p> Vison (n. m.) </p> <div class="image"><img src="images/vison.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr> 		
+                            <tr data-contenu="ZEBRE (N. M.)"> 			
+                                <td><p> Zèbre (n. m.) </p> <div class="image"><img src="images/zebre.jpg" alt=""></div> </td> 			
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>  		
+                            </tr> 		
+                        </tbody> 
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
